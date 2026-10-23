@@ -1,7 +1,7 @@
 package com.pluralsight;
 
 public class CellPhone {
-    // Fields
+    // Fields and Parameters
     int serialNumber;
     String model;
     String carrier;

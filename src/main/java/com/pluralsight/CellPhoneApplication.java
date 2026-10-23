@@ -4,46 +4,19 @@ import java.util.Scanner;
 
 public class CellPhoneApplication {
     static void main() {
-        // first phone
+        // first phone and second phone
         CellPhone myPhone = new CellPhone();
-
-        // second phone for dial
         CellPhone secondPhone = new CellPhone();
-
 
         Scanner myScanner = new Scanner(System.in);
 
-        // first user input
-        System.out.println("What is the serial number? ");
-        myPhone.setSerialNumber(Integer.parseInt(myScanner.nextLine()));
+        // prompt user to gatherPhoneInfo method
+        System.out.println("First phone: ");
+        gatherPhoneInfo(myScanner, myPhone);
 
-        System.out.println("What model is the phone? ");
-        myPhone.setModel(myScanner.nextLine());
+        System.out.println("Second phone: ");
+        gatherPhoneInfo(myScanner, secondPhone);
 
-        System.out.println("Who is the carrier? ");
-        myPhone.setCarrier(myScanner.nextLine());
-
-        System.out.println("What is the phone number? ");
-        myPhone.setPhoneNumber(myScanner.nextLine());
-
-        System.out.println("Who is the owner of the phone? ");
-        myPhone.setOwner(myScanner.nextLine());
-
-        // second user input
-        System.out.println("What is the serial number? ");
-        secondPhone.setSerialNumber(Integer.parseInt(myScanner.nextLine()));
-
-        System.out.println("What model is the phone? ");
-        secondPhone.setModel(myScanner.nextLine());
-
-        System.out.println("Who is the carrier? ");
-        secondPhone.setCarrier(myScanner.nextLine());
-
-        System.out.println("What is the phone number? ");
-        secondPhone.setPhoneNumber(myScanner.nextLine());
-
-        System.out.println("Who is the owner of the phone? ");
-        secondPhone.setOwner(myScanner.nextLine());
 
         // user input goes into display method
         display(myPhone);
@@ -53,11 +26,29 @@ public class CellPhoneApplication {
         myPhone.dial(secondPhone.getPhoneNumber());
         secondPhone.dial(myPhone.getPhoneNumber());
 
-
         myScanner.close();
 
     }
 
+    // gather user input
+    static void gatherPhoneInfo(Scanner myScanner, CellPhone phone) {
+        // user input
+        System.out.println("What is the serial number? ");
+        phone.setSerialNumber(Integer.parseInt(myScanner.nextLine()));
+
+        System.out.println("What model is the phone? ");
+        phone.setModel(myScanner.nextLine());
+
+        System.out.println("Who is the carrier? ");
+        phone.setCarrier(myScanner.nextLine());
+
+        System.out.println("What is the phone number? ");
+        phone.setPhoneNumber(myScanner.nextLine());
+
+        System.out.println("Who is the owner of the phone? ");
+        phone.setOwner(myScanner.nextLine());
+    }
+    // display method for the output
     static void display(CellPhone phone) {
         // display output for user input
         System.out.println("Phone Information:");
